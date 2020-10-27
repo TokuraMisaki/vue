@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script src="../node_modules/vue/dist/vue.js"></script>
+		<script src="../node_modules/axios/dist/axios.js"></script>
+
+		<div id="app">
+			{{message}}
+			<button v-on:click="a">点击</button>
+		</div>
+		<script>
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					message: 'af',
+				},
+				methods: {
+					a: async function () {
+						const r1 = await axios.get(
+							'http://localhost:8081/test1'
+                        );
+                        console.log(r1)
+						// console.log(r1);
+						// const r2 = await axios.get(
+						// 	'http://localhost:8081/test2'
+						// );
+						// console.log(r1);
+						// console.log(r1, r2);
+					},
+
+					// hello: function () {
+					// 	axios
+					// 		.all([axios.get('url'), axios.get('url')])
+					// 		.then(
+					// 			axios.spread(function (userResp, reposResp) {
+					// 				// 上面两个请求都完成后，才执行这个回调方法
+					// 			})
+					// 		);
+					// },
+				},
+			});
+		</script>
+	</body>
+</html>

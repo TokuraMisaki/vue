@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script src="../js/vue.js"></script>
+<div id="app-3">
+  <p v-if="seen">看见</p>
+</div>
+<div id="app-4">
+  <ol>
+    <li v-for="todo in movies">{{todo}}</li>
+  </ol>
+</div>
+<script>
+  const app3 = new Vue({
+    el: '#app-3',
+    data: {
+      seen: true
+    }
+  })
+  const app4 = new Vue({
+    el: '#app-4',
+    data: {
+      movies: ['java','c++','C#']
+    }
+  })
+</script>
+</body>
+</html>

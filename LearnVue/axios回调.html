@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=<device-width>, initial-scale=1.0"
+		/>
+		<title>Document</title>
+	</head>
+	<body>
+		<script src="../node_modules/vue/dist/vue.js"></script>
+		<script src="../node_modules/axios/dist/axios.js"></script>
+		<div id="app"></div>
+
+		<script>
+			var vm = new Vue({
+				el: '#app',
+				data: {},
+				methods: {
+					get: function () {
+						axios.get(
+							'localhost://8081' + 'order/status',
+							{
+								params: {
+									taskId: 13,
+								},
+							}).then(function (response){
+                                callback(response);
+                            })			
+					},
+				},
+			});
+		</script>
+	</body>
+</html>

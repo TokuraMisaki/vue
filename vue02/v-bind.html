@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <script src="../js/vue.js"></script>
+    <div id="app">
+        <img v-bind:src="imgUrl" alt="">
+        <a v-bind:href="baidu">hello</a>
+    </div id="app2"> 
+    <!-- 绑定class -->
+    <div id="app2">
+        <h2 :class="active">{{message}}</h2>
+        <!-- <h2 :class="{类名1:boolean,类名2:boolean}">{{message}}</h2> -->
+        <h2 :class="{active:true}">{{message}}</h2>
+
+    </div>
+
+
+
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello',
+                imgUrl: "https://www.xxpay.vip/res/images/logo.png",
+                baidu: "http://www.baidu.com"
+            }
+        })
+
+        const app2 = new Vue({
+            el: '#app2',
+            data: {
+                message: 'are you ok',
+                active: 'active'
+            }
+        })
+    </script>
+</body>
+</html>

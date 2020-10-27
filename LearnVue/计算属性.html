@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="../js/vue.js"></script>
+    <div id="app">
+        {{message}}
+        {{reversed}}
+    </div>
+    <script>
+        var vm =  new Vue({
+            el: '#app',
+            data: {
+                message: 'hello',
+            },
+            //计算属性是基于它们的响应式依赖进行缓存的。只在相关响应式依赖发生改变时它们才会重新求值
+            computed:{
+                reversed: function(){
+                    return this.message.indexOf('llo');
+                }
+            }
+        })
+    </script>
+</body>
+</html>

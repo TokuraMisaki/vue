@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="../js/vue.js"></script>
+<div id="root">
+    {{message}}
+    {{name}}
+</div>
+<script>
+    let temNode = document.querySelector("#root");
+    let data = {
+        name: 'new name',
+        message：'new message'
+    };
+    function compiler(tempalte,data){
+
+    }
+    // console.log(root)
+    // const app = new Vue({
+    //     el: '#root',
+    //     data: {
+    //         message: 'hello',
+    //         name: '张三'
+    //     }
+    // })
+</script>
+</body>
+</html>
