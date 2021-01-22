@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+<body>
+<div id="app">
+  <button>{{ title }}</button>
+  <cpn :cname="name"></cpn>
+</div>
+
+<script src="../node_modules/vue/dist/vue.min.js"></script>
+<script>
+    Vue.component('cpn', {
+    template: `<div>
+              <button>{{cname}}</button>
+               </div>`,
+    props: ['cname'],
+  })
+  const vm = new Vue({
+    el: '#app',
+    data: {
+      title: "标题",
+      name: ['A']
+    },
+  })
+</script>
+</body>
+</html>

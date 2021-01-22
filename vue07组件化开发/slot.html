@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../node_modules/vue/dist/vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <cpn>
+     <button slot="left">123</button>
+    </cpn>
+  </div>
+
+ <template id="cpn">
+   <div>
+     <button>按钮</button>
+     <slot name="left"><span>left</span></span></slot>
+   </div>
+ </template>
+
+<script>
+  const cpn = {
+    template: "#cpn",
+    data() {
+      return {}
+    },
+  }
+
+  const vm = new Vue({
+    el: "#app",
+    data: {
+
+    },
+    components: {
+      cpn
+    }
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../node_modules/vue/dist/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+  <cpn ref="aaa" :number1="number1" @input="inputR"></cpn>
+  <button @click="btnClick">按钮</button>
+</div>
+<template id="cpn">
+  <div>
+    <label>{{ number1 }}</label>
+    <input type="text" :value="number1" @input="input">
+<!--    <label>{{ number2 }}</label>-->
+<!--    <input type="text" :value="number2" @input="input">-->
+  </div>
+</template>
+<script>
+
+  const cpn = {
+    template: '#cpn',
+    data() {
+      return {
+      }
+    },
+    methods: {
+      input(event) {
+        this.number1 = event.target.value
+        this.$emit('input', event)
+      },
+      show(){
+        console.log("12344251541")
+      }
+    },
+    props: ['number1','number2'],
+  }
+  const vm = new Vue({
+    el: '#app',
+    data: {
+      title: "标题",
+      number1: "123456"
+    },
+    components: {
+      cpn
+    },
+    methods: {
+      inputR(event) {
+       console.log(event)
+      },
+      btnClick(){
+       // this.$children[0].show()
+        console.log(this.$refs.aaa.show());
+      }
+    }
+  })
+</script>
+</body>
+</html>
